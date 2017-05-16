@@ -29,8 +29,8 @@ ALLOWED_HOSTS = []
 
 # Setting Email to Share Posts Via Email
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'mikemahlatse@gmail.com'
-EMAIL_HOST_PASSWORD = 'Mahlatse*mike123456'
+EMAIL_HOST_USER = 'email'
+EMAIL_HOST_PASSWORD = 'Password'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
