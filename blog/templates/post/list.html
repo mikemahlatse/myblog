@@ -1,0 +1,41 @@
+{% extends "blog/base.html" %} {% load staticfiles %}{% block title %}My Blog{% endblock %}{% block content %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('/static/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div class="site-heading">
+                    <h1>Business Life Tracker</h1>
+                    <span class="subheading">A Blog Authored By Mahlatse Mike Malete</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            {% for post in posts %}
+            <div class="post-preview">
+                <a href="{{ post.get_absolute_url }}">
+                    <h2 class="post-title">
+                        {{ post.title }}
+                    </h2>
+                    <h3 class="post-subtitle">
+                        {{ post.body|truncatewords:30|linebreaks }}
+                    </h3>
+                </a>
+                <p class="post-meta">Posted by {{ post.author }} on {{ post.publish }}</p>
+                <p>
+                    <a href="{% url 'blog:post_share' post.id %}">
+                        Share this post
+                    </a>
+                </p>
+            </div>
+            <hr> {% endfor %} {% include "blog/pagination.html" with page=page_obj %}
+        </div>
+    </div>
+</div>
+{% endblock %}

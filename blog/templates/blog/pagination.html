@@ -1,0 +1,9 @@
+<!-- Pager -->
+<div class="clearfix">
+    {% if page.has_previous %}
+    <a class="btn btn-secondary float-left" href="?page={{ page.previous_page_number }}">
+      &larr; Previous Posts
+      </a> {% endif %} {% if page.has_next %}
+    <a class="btn btn-secondary float-right" href="?page={{ page.next_page_number }}">Older Posts &rarr;
+      </a>{% endif %}
+</div>
