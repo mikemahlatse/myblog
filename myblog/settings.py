@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third Party
-
+    'taggit',
+    
     # My Apps
     'blog',
 ]
